@@ -63,21 +63,26 @@ public class AstTopNTest extends TestUtil {
 
 				try {
 						for (int index = 0; index < numRuns; index++) { // randomly choose 4 percentages to test
-								testPercent = checkPercent[_rand.nextInt(checkPercent.length)];
+								//testPercent = checkPercent[_rand.nextInt(checkPercent.length)];
+								testPercent=19;
 								int testNo = _rand.nextInt(4);
 								Log.info("Percentage is " + testPercent);
+								testNo=0;
 								if (testNo==0) {
 										Log.info("Testing top N long.");
 										testTopBottom(topLong, testPercent, 0, "0", _tolerance);
 								}
+								testNo=1;
 								if (testNo==1) {
 										Log.info("Testing top N float.");
 										testTopBottom(topFloat, testPercent, 0, "1", _tolerance);  // test top % Float
 								}
+								testNo=2;
 								if (testNo==2) {
 										Log.info("Testing bottom N long.");
 										testTopBottom(bottomLong, testPercent, 1, "0", _tolerance);  // test bottom % Long
 								}
+								testNo=3;
 								if (testNo==3) {
 										Log.info("Testing bottom N float.");
 										testTopBottom(bottomFloat, testPercent, 1, "1", _tolerance);  // test bottom % Float
